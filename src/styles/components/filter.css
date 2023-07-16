@@ -1,0 +1,48 @@
+.filter {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  list-style: none;
+}
+
+.filter--hidden {
+  display: none;
+}
+
+.filter__item {
+  margin: 0 9px;
+}
+
+.filter__radio {
+  display: none;
+}
+
+.filter__label {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -.19px;
+  color: var(--text-filter);
+  cursor: pointer;
+}
+
+.filter__label:hover,
+.filter__label:focus {
+  color: var(--text-filter-hover);
+}
+
+.filter__radio:checked ~ .filter__label {
+  color: var(--primary-blue);
+}
+
+@media (max-width: 767.99px) {
+
+  .filter {
+    max-width: 540px;
+    margin: 0 auto;
+    background-color: var(--item-bg);
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+  }
+}

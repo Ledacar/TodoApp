@@ -1,0 +1,227 @@
+.tasks {
+  padding-inline: 24px;
+}
+
+.tasks__container {
+  max-width: 540px;
+  margin: 0 auto 16px;
+  background-color: var(--item-bg);
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+}
+
+.tasks__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: .3s ease;
+  overflow: hidden;
+}
+
+.tasks__list:not(:empty) {
+  border-block-end: 1px solid var(--border);
+}
+
+.tasks__item {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  transition: height .3s ease;
+  cursor: move;
+}
+
+.tasks__item:not(:last-of-type) {
+  border-block-end: 1px solid var(--border);
+}
+
+.tasks__item--dragged-over {
+  background-color: var(--item-bg-dragged-over);
+}
+
+.tasks__input {
+  display: none;
+}
+
+.tasks__text {
+  position: relative;
+  flex-grow: 1;
+  padding-block: 16px;
+  padding-inline-start: 52px;
+  padding-inline-end: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-primary);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.tasks__text::before,
+.tasks__text::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.tasks__text::before {
+  inset-block-start: 14px;
+  inset-inline-start: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+}
+
+.tasks__text::after {
+  inset-block-start: 15px;
+  inset-inline-start: 21px;
+  display: none;
+  width: 18px;
+  height: 18px;
+  background-color: var(--item-bg);
+}
+
+.tasks__text:hover::before,
+.tasks__text:focus::before,
+.tasks__input:checked ~ .tasks__text::before {
+  background-image: var(--gradient);
+  border: 0
+}
+
+.tasks__text:hover::after,
+.tasks__text:focus::after {
+  display: block;
+}
+
+.tasks__input:checked ~ .tasks__text {
+  text-decoration: line-through;
+  color: var(--text-checked);
+}
+
+.tasks__input:checked ~ .tasks__text::after {
+  display: block;
+  background-color: transparent;
+  background-image: url('/images/icon-check.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 9px;
+}
+
+.tasks__delete {
+  flex-shrink: 0;
+  width: 32px;
+  height: 48px;
+  padding: 0;
+  background-color: transparent;
+  background-image: url('/images/icon-cross.svg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 12px;
+  border: 0;
+  cursor: pointer;
+}
+
+.tasks__footer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-block-start: 16px;
+  color: var(--text-filter);
+}
+
+.tasks__footer--hidden {
+  display: none;
+}
+
+.tasks__clear {
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: capitalize;
+  text-align: end;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.tasks__clear:hover,
+.tasks__clear:focus {
+  color: var(--text-filter-hover);
+}
+
+.tasks__filter {
+  margin: 0;
+  margin-block-end: 40px;
+}
+
+.task__instruction {
+  font-size: 14px;
+  text-align: center;
+  color: var(--text-filter);
+}
+
+.task__instruction--hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+
+  .tasks {
+    padding-inline: 0;
+  }
+
+  .tasks__container {
+    margin-block-end: 0;
+  }
+
+  .tasks__text {
+    padding-block: 20px;
+    padding-inline-start: 72px;
+  }
+
+  .tasks__text::before {
+    inset-block-start: 20px;
+    inset-inline-start: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .tasks__text::after {
+    inset-block-start: 21px;
+    inset-inline-start: 25px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .tasks__delete {
+    width: 42px;
+    height: 64px;
+    background-size: 18px;
+    opacity: 0;
+  }
+
+  .tasks__item:hover .tasks__delete {
+    opacity: 1;
+  }
+
+  .tasks__footer {
+    padding-block-start: 16px;
+    padding-block-end: 15px;
+    padding-inline: 24px;
+    font-size: 14px;
+  }
+
+  .tasks__clear {
+    font-size: 14px;
+    letter-spacing: -.19px;
+  }
+
+  .tasks__filter {
+    margin-block-start: -54px;
+    margin-block-end: 50px;
+  }
+}

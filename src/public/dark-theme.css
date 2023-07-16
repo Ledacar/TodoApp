@@ -1,0 +1,23 @@
+:root {
+  color-scheme: dark;
+  --header-bg: hsl(267, 99%, 38%);
+  --header-image: var(--header-bg-dark-mobile);
+  --toggle-icon: var(--header-icon-dark);
+  --shadow: 0 35px 50px -15px hsla(0, 0, 0, .5);
+  --body-bg: hsl(235, 21%, 11%);
+  --item-bg: hsl(235, 24%, 19%);
+  --item-bg-dragged-over: hsl(235, 24%, 15%);
+  --border: hsl(237, 14%, 26%);
+  --text-primary: hsl(234, 39%, 85%);
+  --text-secondary: hsl(234, 11%, 52%);
+  --text-checked: hsl(233, 14%, 35%);
+  --text-filter: hsl(235, 16%, 43%);
+  --text-filter-hover: hsl(236, 32%, 92%);
+}
+
+@media (min-width: 768px) {
+  :root {
+    color-scheme: dark;
+    --header-image: var(--header-bg-dark-desktop);
+  }
+}

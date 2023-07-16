@@ -1,0 +1,111 @@
+.header {
+  min-height: 200px;
+  padding-block-start: 48px;
+  padding-block-end: 44px;
+  padding-inline: 24px;
+  background-color: var(--header-bg);
+  background-image: var(--header-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.header__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.header__logo {
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.header__theme-toggle {
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  color: white;
+  background-color: transparent;
+  background-image: var(--toggle-icon);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 0;
+  cursor: pointer;
+}
+
+.header__form {
+  position: relative;
+  width: 100%;
+  margin-block-start: 40px;
+}
+
+.header__form::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 14px;
+  inset-inline-start: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
+
+.header__input {
+  width: 100%;
+  min-height: 48px;
+  padding: 16px 16px 15px 52px;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: -0.25px;
+  text-overflow: ellipsis;
+  color: var(--text-primary);
+  background-color: var(--item-bg);
+  border: 0;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+}
+
+.header__input::placeholder {
+  color: var(--text-secondary);
+}
+
+@media (min-width: 768px) {
+  .header {
+    min-height: 300px;
+    padding: 70px 0 78px;
+  }
+
+  .header__logo {
+    font-size: 40px;
+  }
+
+  .header__theme-toggle {
+    width: 25px;
+    height: 25px;
+  }
+
+  .header__form::before {
+    inset-block-start: 20px;
+    inset-inline-start: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .header__input {
+    min-height: 64px;
+    padding: 20px 24px 18px 72px;
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/images/iconTodo.png">
+  <link rel="stylesheet" href="styles/style.css" />
+  <script defer type="module" src="scripts/script.js"></script>
+  <title>Todo App</title>
+</head>
+<body class="page">
+  <header class="page__header header">
+    <div class="header__container">
+      <h1 class="header__logo">Todo</h1>
+      <button class="header__theme-toggle" type="button">
+        <span class="visually-hidden">Change theme</span>
+      </button>
+      <form class="header__form" action="#" method="post" novalidate>
+        <input
+          class="header__input"
+          type="text"
+          name="new-task"
+          placeholder="Create a new todo…"
+          autocomplete="off"
+        >
+      </form>
+    </div>
+  </header>
+  <main class="page__main">
+    <section class="tasks">
+      <h2 class="visually-hidden">Task list</h2>
+      <div class="tasks__container">
+        <ul class="tasks__list"></ul>
+        <footer class="tasks__footer tasks__footer--hidden">
+          <span class="tasks__amount">0 items left</span>
+          <button class="tasks__clear" type="button">Clear completed</button>
+        </footer>
+      </div>
+      <ul class="tasks__filter filter filter--hidden">
+        <li class="filter__item">
+          <input
+            class="filter__radio"
+            type="radio"
+            name="filter-radio"
+            id="filter-radio-all"
+            value="all"
+            checked
+          >
+          <label class="filter__label" for="filter-radio-all">All</label>
+        </li>
+        <li class="filter__item">
+          <input
+            class="filter__radio"
+            type="radio"
+            name="filter-radio"
+            id="filter-radio-active"
+            value="active"
+          >
+          <label class="filter__label" for="filter-radio-active">Active</label>
+        </li>
+        <li class="filter__item">
+          <input
+            class="filter__radio"
+            type="radio"
+            name="filter-radio"
+            id="filter-radio-completed"
+            value="completed"
+          >
+          <label class="filter__label" for="filter-radio-completed">Completed</label>
+        </li>
+      </ul>
+      <p class="task__instruction task__instruction--hidden">Drag and drop to reorder list</p>
+    </section>
+  </main>
+</body>
+</html>

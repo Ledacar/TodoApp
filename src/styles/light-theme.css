@@ -1,0 +1,23 @@
+:root {
+  color-scheme: light;
+  --header-bg: hsl(249, 99%, 64%);
+  --header-image: var(--header-bg-light-mobile);
+  --toggle-icon: var(--header-icon-light);
+  --shadow: 0 35px 50px -15px hsla(235, 19%, 80%, .5);
+  --body-bg: hsl(0, 0%, 98%);
+  --item-bg: white;
+  --item-bg-dragged-over: hsl(0, 0%, 95%);
+  --border: hsl(236, 33%, 92%);
+  --text-primary: hsl(235, 19%, 35%);
+  --text-secondary: hsl(236, 9%, 61%);
+  --text-checked: hsl(233, 11%, 84%);
+  --text-filter: hsl(235, 9%, 61%);
+  --text-filter-hover: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+  :root {
+    color-scheme: light;
+    --header-image: var(--header-bg-light-desktop);
+  }
+}
